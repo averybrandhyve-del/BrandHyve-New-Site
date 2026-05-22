@@ -1,0 +1,231 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+	title?: string;
+	description?: string;
+	schemaType?: 'software' | 'local' | 'faq' | 'contact';
+}
+
+const { 
+	title = "BrandHyve | Automated Google Reviews & Reputation Management", 
+	description = "Effortlessly collect more 5-star Google reviews, manage customer feedback, and rank higher in local search results with BrandHyve's automated review system.",
+	schemaType = 'software'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="reputation management, google reviews, automated reviews, local seo, brandhyve, review generation assistant, positive feedback, google business profile" />
+		<meta name="author" content="BrandHyve" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content="https://www.brandhyve.com/" />
+		<meta property="og:site_name" content="BrandHyve" />
+		<meta property="og:image" content="https://www.brandhyve.com/og-image.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://www.brandhyve.com/og-image.jpg" />
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Astro View Transitions -->
+		<ClientRouter />
+		
+		<!-- JSON-LD Structured Data Schema -->
+		{schemaType === 'software' && (
+			<script type="application/ld+json" is:inline>
+				{
+					"@context": "https://schema.org",
+					"@type": "SoftwareApplication",
+					"name": "BrandHyve",
+					"operatingSystem": "All",
+					"applicationCategory": "BusinessApplication",
+					"offers": {
+						"@type": "Offer",
+						"priceCurrency": "USD",
+						"price": "49.00"
+					},
+					"aggregateRating": {
+						"@type": "AggregateRating",
+						"ratingValue": "4.9",
+						"reviewCount": "184"
+					}
+				}
+			</script>
+		)}
+
+		{(schemaType === 'local' || schemaType === 'faq' || schemaType === 'contact') && (
+			<script type="application/ld+json" is:inline>
+				{
+					"@context": "https://schema.org",
+					"@type": "LocalBusiness",
+					"name": "BrandHyve",
+					"image": "https://www.brandhyve.com/logo.png",
+					"url": "https://www.brandhyve.com/",
+					"telephone": "+1-800-555-HYVE",
+					"priceRange": "$$",
+					"address": {
+						"@type": "PostalAddress",
+						"streetAddress": "100 Hive Way",
+						"addressLocality": "Austin",
+						"addressRegion": "TX",
+						"postalCode": "78701",
+						"addressCountry": "US"
+					}
+				}
+			</script>
+		)}
+
+		{schemaType === 'faq' && (
+			<script type="application/ld+json" is:inline>
+				{
+					"@context": "https://schema.org",
+					"@type": "FAQPage",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "What is Google review automation, and how does it work?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Google review automation simplifies collecting reviews by automatically sending invitations to customers via email or text after transactional milestones. We integrate with your existing software applications (CRMs, POS) to generate review requests instantly without manual effort."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Why are Google reviews important for my business?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Google reviews establish organic digital trust, increase CTR click-through rates, and enhance local search indexing authority. A continuous flow of reviews tells search engine indexing bots that your business is active and reliable, increasing your rank in maps and local search query parameters."
+							}
+						}
+					]
+				}
+			</script>
+		)}
+
+		{schemaType === 'contact' && (
+			<script type="application/ld+json" is:inline>
+				{
+					"@context": "https://schema.org",
+					"@type": "WebPage",
+					"name": "Contact BrandHyve",
+					"description": "Get in touch with BrandHyve's customer support and reputation growth team.",
+					"mainEntity": {
+						"@type": "ContactPage",
+						"contactPoint": {
+							"@type": "ContactPoint",
+							"telephone": "+1-800-555-HYVE",
+							"contactType": "customer service",
+							"email": "support@brandhyve.com"
+						}
+					}
+				}
+			</script>
+		)}
+	</head>
+	<body>
+		<!-- Decorative Background Honeycombs -->
+		<div class="honeycomb-background">
+			<svg class="honeycomb-shape shape-1" viewBox="0 0 200 200" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M40,20 L80,20 L100,55 L80,90 L40,90 L20,55 Z" stroke-width="1" />
+				<path d="M100,55 L140,55 L160,90 L140,125 L100,125 L80,90 Z" stroke-width="1" />
+				<path d="M40,90 L80,90 L100,125 L80,160 L40,160 L20,125 Z" stroke-width="1" />
+			</svg>
+			<svg class="honeycomb-shape shape-2" viewBox="0 0 200 200" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M40,20 L80,20 L100,55 L80,90 L40,90 L20,55 Z" stroke-width="1" />
+				<path d="M100,55 L140,55 L160,90 L140,125 L100,125 L80,90 Z" stroke-width="1" />
+				<path d="M40,90 L80,90 L100,125 L80,160 L40,160 L20,125 Z" stroke-width="1" />
+			</svg>
+			<svg class="honeycomb-shape shape-3" viewBox="0 0 200 200" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M40,20 L80,20 L100,55 L80,90 L40,90 L20,55 Z" stroke-width="1" />
+				<path d="M100,55 L140,55 L160,90 L140,125 L100,125 L80,90 Z" stroke-width="1" />
+				<path d="M40,90 L80,90 L100,125 L80,160 L40,160 L20,125 Z" stroke-width="1" />
+			</svg>
+		</div>
+
+		<!-- Sticky Nav Bar -->
+		<nav class="nav-container">
+			<div class="logo">
+				<a href="/">
+					<span class="logo-icon">⚡</span> Brand<span style="color: var(--accent-yellow); font-weight: 700;">Hyve</span>
+				</a>
+			</div>
+			<div class="nav-links">
+				<a href="/">Home</a>
+				<a href="/reviews">Reviews</a>
+				<a href="/seo">SEO</a>
+				<a href="/websites">Websites</a>
+				<a href="/about">About Us</a>
+				<a href="/contact">Contact</a>
+			</div>
+			<div class="nav-actions">
+				<a href="/reviews#pricing" class="btn-primary" style="padding: 8px 18px; font-size: 13px;">Join the Hyve</a>
+			</div>
+		</nav>
+
+		<!-- Main Page Content Slot -->
+		<slot />
+
+		<!-- Footer Section -->
+		<footer class="footer-section">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<div class="logo" style="margin-bottom: 20px;">
+						<span style="font-size: 20px;">⚡</span> Brand<span style="color: var(--accent-yellow); font-weight: 700;">Hyve</span>
+					</div>
+					<p class="body-sm" style="color: var(--ink-muted); max-width: 250px;">
+						Empowering local businesses with automated reputation and reviews intelligence.
+					</p>
+				</div>
+				<div class="footer-links-col">
+					<h4>Product</h4>
+					<a href="/reviews">Reviews</a>
+					<a href="/seo">SEO</a>
+					<a href="/websites">Websites</a>
+					<a href="/reviews#pricing">Pricing</a>
+				</div>
+				<div class="footer-links-col">
+					<h4>Company</h4>
+					<a href="/about">About Us</a>
+					<a href="/about#faq">FAQ</a>
+					<a href="/contact">Contact Us</a>
+				</div>
+				<div class="footer-links-col">
+					<h4>Skool Community</h4>
+					<a href="https://www.skool.com/ai-marketing-hub" target="_blank">Free Hub</a>
+					<a href="https://www.skool.com/ai-marketing-hub-pro" target="_blank">Pro Hub</a>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; Copyright 2026. BrandHyve. All Rights Reserved.</p>
+			</div>
+			
+			<!-- Required Community Footer -->
+			<div class="community-footer">
+				<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+				<p>Built by agricidaniel | Join the AI Marketing Hub community</p>
+				<p>🆓 Free  → <a href="https://www.skool.com/ai-marketing-hub" target="_blank">https://www.skool.com/ai-marketing-hub</a></p>
+				<p>⚡ Pro   → <a href="https://www.skool.com/ai-marketing-hub-pro" target="_blank">https://www.skool.com/ai-marketing-hub-pro</a></p>
+				<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+			</div>
+		</footer>
+	</body>
+</html>

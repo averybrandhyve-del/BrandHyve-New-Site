@@ -1,0 +1,273 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us | BrandHyve Trust & Local Reputation Specialists" description="Learn about BrandHyve's mission to help local brick-and-mortar businesses automate their Google reputation and build long-term local trust." schemaType="faq">
+  <!-- Global Decorative Background Glows -->
+  <div class="glow-glow" style="top: 10%; left: 5%;"></div>
+  <div class="glow-glow" style="top: 60%; right: 5%; width: 250px; height: 250px; background: #888888; animation-delay: -3s;"></div>
+
+  <!-- About Hero Section -->
+  <section class="section-padding about-hero">
+    <div class="section-header">
+      <span class="caption">Our Mission</span>
+      <h1 class="display-xl">We Automate Trust For Local Businesses</h1>
+      <p class="body-lg">BrandHyve was founded to bridge the gap between complex search algorithms and local businesses. We make review collection effortless, letting owners focus on what they do best.</p>
+    </div>
+
+    <!-- Core Values Section -->
+    <div class="card-grid">
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">🛡️</div>
+          <h3>Uncompromising Trust</h3>
+          <p>Digital reputation is fragile. Our systems help owners address experiences immediately while building organic local authority safely and transparently.</p>
+        </div>
+      </div>
+      
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">⚡</div>
+          <h3>Frictionless Flow</h3>
+          <p>We believe in absolute automation. No complex onboarding dashboards or manual copy-pasting required to collect feedback.</p>
+        </div>
+      </div>
+
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">🌍</div>
+          <h3>Community Focus</h3>
+          <p>We work to support local brick-and-mortar stores, medical practices, agencies, and services that serve as the backbone of communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordion) -->
+  <section id="faq" class="section-padding faq-section">
+    <div class="section-header">
+      <span class="caption">Common Queries</span>
+      <h2 class="display-md">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-accordion-list">
+      <div class="faq-item">
+        <div class="faq-header">
+          <h4>What is Google review automation, and how does it work?</h4>
+          <span class="accordion-arrow">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Google review automation simplifies collecting reviews by automatically sending invitations to customers via email or text after transactional milestones. We integrate with your existing software applications (CRMs, POS) to generate review requests instantly without manual effort.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <h4>Why are Google reviews important for my business?</h4>
+          <span class="accordion-arrow">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Google reviews establish organic digital trust, increase CTR click-through rates, and enhance local search indexing authority. A continuous flow of reviews tells search engine indexing bots that your business is active and reliable, increasing your rank in maps and local search query parameters.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <h4>How quickly will I see results?</h4>
+          <span class="accordion-arrow">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Many clients observe increases in reviews within the first 30 days of campaign activation. The review collection rate corresponds directly with customer interaction frequency.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <h4>Is there a free trial available?</h4>
+          <span class="accordion-arrow">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes, we provide a 14-day complimentary trial sandbox so you can evaluate features and send invites to test review automation performance before choosing a plan.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <h4>Are there any contracts or commitments?</h4>
+          <span class="accordion-arrow">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            No. All plans operate on monthly subscription increments. You can upgrade, downgrade, or cancel subscription parameters at any point from your dashboard settings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky CTA Banner -->
+  <section class="section-padding cta-banner-section">
+    <div class="atmosphere-card-grey cta-banner border-beam-card">
+      <div class="border-beam-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 40px; flex-wrap: wrap;">
+        <div class="cta-left">
+          <h2 class="display-md">Join Over 1,000+ Local Businesses</h2>
+          <p class="body-lg" style="margin-top: 10px;">
+            Grow your reputation on autopilot with BrandHyve's trusted automation tools.
+          </p>
+        </div>
+        <div class="cta-right">
+          <a href="/contact" class="btn-primary" style="padding: 16px 36px;">Schedule Demo Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/main.js';
+</script>
+
+<style>
+  /* Local Component Styling */
+  .about-hero {
+    padding-top: 150px;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+  }
+
+  .section-header .caption {
+    color: var(--accent-yellow);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-header h1, .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .card-grid .col-4 {
+    grid-column: span 4;
+  }
+
+  @media (max-width: 810px) {
+    .card-grid .col-4 {
+      grid-column: span 12;
+    }
+  }
+
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* FAQ Accordion list */
+  .faq-accordion-list {
+    max-width: 750px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .faq-item {
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+  }
+
+  .faq-header {
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-header:hover {
+    background-color: var(--surface-2);
+  }
+
+  .faq-header h4 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-body);
+  }
+
+  .accordion-arrow {
+    font-size: 20px;
+    color: var(--ink-muted);
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+
+  .faq-item.open .accordion-arrow {
+    transform: rotate(45deg);
+    color: var(--accent-yellow);
+  }
+
+  .faq-answer {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.25s cubic-bezier(0, 1, 0, 1);
+  }
+
+  .faq-answer p {
+    padding: 0 30px 24px;
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* CTA Banner Details */
+  .cta-banner {
+    padding: 1px !important;
+  }
+
+  .cta-left {
+    max-width: 60%;
+  }
+
+  @media (max-width: 810px) {
+    .cta-left {
+      max-width: 100%;
+    }
+    .cta-right {
+      width: 100%;
+    }
+    .cta-right .btn-primary {
+      width: 100%;
+    }
+  }
+</style>

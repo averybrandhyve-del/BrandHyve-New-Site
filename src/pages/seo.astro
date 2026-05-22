@@ -1,0 +1,479 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SEO & Rank Boosting | BrandHyve Local Pack Autopilot" description="Scale your Google Map Pack visibility with local SEO, Google Business Profile optimization, schema markup compliance, and automated reviews indexing." schemaType="local">
+  <!-- Global Decorative Background Glows -->
+  <div class="glow-glow" style="top: 15%; left: 8%;"></div>
+  <div class="glow-glow" style="top: 60%; right: 12%; width: 300px; height: 300px; background: #888888; animation-delay: -1s;"></div>
+
+  <!-- Hero Section -->
+  <section class="section-padding seo-hero">
+    <div class="section-header">
+      <span class="caption">SEO & Rank Boosting</span>
+      <h1 class="display-xl">Dominate Google Map Pack. Rank Page One.</h1>
+      <p class="body-lg">Feed search engines the continuous feedback signals, structural local schema, and profile optimizations required to climb rankings and capture local lead queries.</p>
+    </div>
+
+    <!-- Detailed SEO Features -->
+    <div class="card-grid">
+      <!-- Feature 1: Google Business Profile -->
+      <div class="card spotlight-card col-6">
+        <div class="spotlight-card-content">
+          <span class="service-tag">Listing Authority</span>
+          <h3>Google Profile Optimization</h3>
+          <p>
+            We manage and fine-tune your Google Business Profile categories, description keyword density, service lists, and photo uploads to maximize local match indexing.
+          </p>
+          <div class="feature-metrics">
+            <span class="metric-val">+180%</span>
+            <span class="metric-lbl">Increase in business profile views</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Automated Social Posting -->
+      <div class="card spotlight-card col-6">
+        <div class="spotlight-card-content">
+          <span class="service-tag">Syndication</span>
+          <h3>Automated Social Posting</h3>
+          <p>
+            Keep your business presence active across channels. Automatically syndicate positive reviews and profile updates directly to Facebook, Instagram, and GBP updates.
+          </p>
+          <div class="feature-metrics">
+            <span class="metric-val">24/7</span>
+            <span class="metric-lbl">Active syndication scheduling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Local Schema Markup -->
+      <div class="card spotlight-card col-6">
+        <div class="spotlight-card-content">
+          <span class="service-tag">Technical SEO</span>
+          <h3>Structured Local Schema</h3>
+          <p>
+            Inject semantic JSON-LD local business schema headers directly into your site code. This data structure acts like police lights to search indexing bots, highlighting your business coordinates, review rating count, and contact points instantly.
+          </p>
+          <div class="feature-metrics">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">Metadata structure indexing match</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Client Rank Proof -->
+      <div class="card spotlight-card col-6">
+        <div class="spotlight-card-content">
+          <span class="service-tag">Proven Results</span>
+          <h3>Page Twenty to Page One</h3>
+          <p>
+            Our systems have successfully moved over thirty active clients from the local ranking depth charts straight into the top search results. We combine review volume, GBP optimization, and speed to secure premium traffic.
+          </p>
+          <div class="feature-metrics">
+            <span class="metric-val">30+</span>
+            <span class="metric-lbl">Businesses pushed to first page results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Local Pack Simulator Section -->
+  <section class="section-padding visualizer-section" style="padding-top: 0;">
+    <div class="visualizer-container glass-card">
+      <div class="visualizer-left">
+        <span class="caption" style="color: var(--accent-yellow);">Local Pack Simulator</span>
+        <h2>Simulate Your Search Ranking Growth</h2>
+        <p class="body-lg" style="margin-top: 15px; margin-bottom: 30px;">
+          Interactive maps competitor stack visualizer. Select an optimization tier below to watch your business climb the Google Local 3-Pack rank lists.
+        </p>
+
+        <!-- Simulator Controls -->
+        <div class="simulator-controls">
+          <button id="sim-tier-1" class="btn-secondary sim-btn active">Tier 1: Baseline Unoptimized</button>
+          <button id="sim-tier-2" class="btn-secondary sim-btn">Tier 2: Optimize GBP & Schema</button>
+          <button id="sim-tier-3" class="btn-secondary sim-btn">Tier 3: Launch Review Autopilot</button>
+        </div>
+      </div>
+
+      <div class="visualizer-right">
+        <!-- Google Maps Local Pack Simulation UI Frame -->
+        <div class="maps-simulation-frame">
+          <div class="maps-sim-header">
+            <span class="maps-logo">📍</span> Google Maps Local 3-Pack
+          </div>
+          <div id="sim-ranking-stack" class="sim-ranking-stack">
+            <!-- Competitor A -->
+            <div id="item-comp-a" class="rank-item first-place">
+              <div class="rank-num">#1</div>
+              <div class="rank-details">
+                <div class="rank-title">Competitor A</div>
+                <div class="rank-stars">★★★★☆ <span class="rank-count">(42 reviews)</span></div>
+                <span class="rank-status-tag">Verified GBP</span>
+              </div>
+            </div>
+
+            <!-- Competitor B -->
+            <div id="item-comp-b" class="rank-item second-place">
+              <div class="rank-num">#2</div>
+              <div class="rank-details">
+                <div class="rank-title">Competitor B</div>
+                <div class="rank-stars">★★★☆☆ <span class="rank-count">(18 reviews)</span></div>
+                <span class="rank-status-tag">Verified GBP</span>
+              </div>
+            </div>
+
+            <!-- Your Business -->
+            <div id="item-your-biz" class="rank-item third-place highlighted-your-biz">
+              <div class="rank-num">#3</div>
+              <div class="rank-details">
+                <div class="rank-title">Your Business</div>
+                <div id="your-biz-stars" class="rank-stars">☆☆☆☆☆ <span class="rank-count">(2 reviews)</span></div>
+                <span id="your-biz-status" class="rank-status-tag">Unoptimized Profile</span>
+              </div>
+              <span id="your-biz-growth-badge" class="rank-badge-trend">Need Schema</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky CTA Banner -->
+  <section class="section-padding cta-banner-section">
+    <div class="atmosphere-card-grey cta-banner border-beam-card">
+      <div class="border-beam-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 40px; flex-wrap: wrap;">
+        <div class="cta-left">
+          <h2 class="display-md">Push Your Listing to Page One</h2>
+          <p class="body-lg" style="margin-top: 10px;">
+            Let our automated SEO systems and review engines secure top placements in your service territory.
+          </p>
+        </div>
+        <div class="cta-right">
+          <a href="/contact" class="btn-primary" style="padding: 16px 36px;">Talk to our team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/main.js';
+
+  // Local Scoped Simulator Logic for Local Pack Simulator
+  document.addEventListener('astro:page-load', () => {
+    const tier1Btn = document.getElementById('sim-tier-1');
+    const tier2Btn = document.getElementById('sim-tier-2');
+    const tier3Btn = document.getElementById('sim-tier-3');
+    const stack = document.getElementById('sim-ranking-stack');
+
+    const yourBiz = document.getElementById('item-your-biz');
+    const compA = document.getElementById('item-comp-a');
+    const compB = document.getElementById('item-comp-b');
+
+    const bizStars = document.getElementById('your-biz-stars');
+    const bizStatus = document.getElementById('your-biz-status');
+    const growthBadge = document.getElementById('your-biz-growth-badge');
+
+    if (!tier1Btn || !tier2Btn || !tier3Btn || !stack) return;
+
+    function resetActive() {
+      [tier1Btn, tier2Btn, tier3Btn].forEach(btn => btn.classList.remove('active'));
+    }
+
+    tier1Btn.addEventListener('click', () => {
+      resetActive();
+      tier1Btn.classList.add('active');
+
+      // Rank Your Business at #3
+      stack.innerHTML = '';
+      stack.appendChild(compA);
+      stack.appendChild(compB);
+      stack.appendChild(yourBiz);
+
+      // Reset positions & text
+      compA.querySelector('.rank-num').textContent = '#1';
+      compB.querySelector('.rank-num').textContent = '#2';
+      yourBiz.querySelector('.rank-num').textContent = '#3';
+
+      bizStars.innerHTML = '☆☆☆☆☆ <span class="rank-count">(2 reviews)</span>';
+      bizStatus.textContent = 'Unoptimized Profile';
+      growthBadge.textContent = 'Need Schema';
+      growthBadge.style.backgroundColor = 'rgba(255,255,255,0.05)';
+      growthBadge.style.color = 'var(--ink-muted)';
+    });
+
+    tier2Btn.addEventListener('click', () => {
+      resetActive();
+      tier2Btn.classList.add('active');
+
+      // Rank Your Business at #2
+      stack.innerHTML = '';
+      stack.appendChild(compA);
+      stack.appendChild(yourBiz);
+      stack.appendChild(compB);
+
+      compA.querySelector('.rank-num').textContent = '#1';
+      yourBiz.querySelector('.rank-num').textContent = '#2';
+      compB.querySelector('.rank-num').textContent = '#3';
+
+      bizStars.innerHTML = '☆☆☆☆☆ <span class="rank-count">(2 reviews)</span>';
+      bizStatus.textContent = 'Schema & GBP Optimized';
+      growthBadge.textContent = 'Verified Listing';
+      growthBadge.style.backgroundColor = 'rgba(255, 219, 21, 0.1)';
+      growthBadge.style.color = 'var(--accent-yellow)';
+    });
+
+    tier3Btn.addEventListener('click', () => {
+      resetActive();
+      tier3Btn.classList.add('active');
+
+      // Rank Your Business at #1
+      stack.innerHTML = '';
+      stack.appendChild(yourBiz);
+      stack.appendChild(compA);
+      stack.appendChild(compB);
+
+      yourBiz.querySelector('.rank-num').textContent = '#1';
+      compA.querySelector('.rank-num').textContent = '#2';
+      compB.querySelector('.rank-num').textContent = '#3';
+
+      bizStars.innerHTML = '★★★★★ <span class="rank-count">(142 reviews)</span>';
+      bizStatus.textContent = 'Autopilot review requests active';
+      growthBadge.textContent = '⚡ Top Ranked';
+      growthBadge.style.backgroundColor = 'rgba(255, 219, 21, 0.2)';
+      growthBadge.style.color = 'var(--accent-yellow)';
+    });
+  });
+</script>
+
+<style>
+  /* Local Component Styling */
+  .seo-hero {
+    padding-top: 150px;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+  }
+
+  .section-header .caption {
+    color: var(--accent-yellow);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-header h1 {
+    margin-bottom: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .card-grid .col-6 {
+    grid-column: span 6;
+  }
+
+  @media (max-width: 810px) {
+    .card-grid .col-6 {
+      grid-column: span 12;
+    }
+  }
+
+  .service-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-yellow);
+    background-color: rgba(255, 219, 21, 0.1);
+    padding: 4px 10px;
+    border-radius: var(--rounded-sm);
+    width: fit-content;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .feature-metrics {
+    border-top: 1px solid var(--hairline-soft);
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-val {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    color: var(--primary);
+  }
+
+  .metric-lbl {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+
+  /* Visualizer Container */
+  .visualizer-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 50px;
+  }
+
+  @media (max-width: 810px) {
+    .visualizer-container {
+      grid-template-columns: 1fr;
+      padding: 30px;
+      gap: 35px;
+    }
+  }
+
+  .simulator-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sim-btn {
+    text-align: left;
+    padding: 15px 25px;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  .sim-btn.active {
+    background-color: var(--accent-yellow);
+    color: var(--on-primary);
+    border-color: var(--accent-yellow);
+  }
+
+  .sim-btn.active:hover {
+    background-color: var(--accent-yellow);
+  }
+
+  /* Maps simulation frame styling */
+  .maps-simulation-frame {
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+  }
+
+  .maps-sim-header {
+    background-color: #0c0c0e;
+    border-bottom: 1px solid var(--hairline);
+    padding: 15px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-muted);
+  }
+
+  .maps-logo {
+    margin-right: 5px;
+  }
+
+  .sim-ranking-stack {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 290px;
+  }
+
+  .rank-item {
+    background-color: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-lg);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .rank-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink-muted);
+    font-family: var(--font-display);
+    width: 30px;
+  }
+
+  .rank-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rank-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .rank-stars {
+    font-size: 12px;
+    color: var(--accent-yellow);
+  }
+
+  .rank-count {
+    color: var(--ink-muted);
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .rank-status-tag {
+    font-size: 10px;
+    color: var(--ink-muted);
+  }
+
+  .highlighted-your-biz {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  #item-your-biz.highlighted-your-biz {
+    transition: all 0.3s ease;
+  }
+
+  /* When your biz climbs the ranks style overrides */
+  #sim-ranking-stack .rank-item {
+    order: unset;
+  }
+
+  .rank-badge-trend {
+    position: absolute;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--ink-muted);
+    padding: 4px 8px;
+    border-radius: var(--rounded-xs);
+    transition: all 0.2s ease;
+  }
+</style>
