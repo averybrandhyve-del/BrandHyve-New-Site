@@ -1,0 +1,731 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us | BrandHyve Local Reputation Automation" description="Get in touch with BrandHyve's customer support and reputation growth team. Automate reviews, answer customer questions, and boost search rankings." schemaType="contact">
+  <!-- Global Decorative Background Glows -->
+  <div class="glow-glow" style="top: 15%; left: 10%;"></div>
+  <div class="glow-glow" style="top: 50%; right: 5%; width: 250px; height: 250px; background: #888888; animation-delay: -2s;"></div>
+
+  <section class="section-padding contact-section">
+    <div class="section-header">
+      <span class="caption">Get In Touch</span>
+      <h1 class="display-xl">Connect With Our Team</h1>
+      <p class="body-lg">Have questions about automating your reviews? We are here to help scale your local search reputation.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left Column: Contact details & Interactive Map Graphic -->
+      <div class="contact-info">
+        <div class="card spotlight-card info-card">
+          <div class="spotlight-card-content">
+            <h3>Contact Details</h3>
+            <div class="info-list">
+              <div class="info-item">
+                <span class="info-icon">📞</span>
+                <div>
+                  <span class="info-label">Call Us</span>
+                  <a href="tel:+18005554983" class="info-val">+1-800-555-HYVE</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">✉️</span>
+                <div>
+                  <span class="info-label">Email Us</span>
+                  <a href="mailto:support@brandhyve.com" class="info-val">support@brandhyve.com</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <span class="info-label">Headquarters</span>
+                  <span class="info-val">100 Hive Way, Austin, TX 78701</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Google Map Placeholder Graphic -->
+        <div class="glass-card map-placeholder-card">
+          <div class="map-header">
+            <span class="map-dot"></span>
+            <span class="map-label">Tampa Area Radar</span>
+          </div>
+          <div class="map-graphic">
+            <!-- Tampa Bay Area Map Outline SVG -->
+            <svg class="tampa-map-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Pinellas Peninsula (Left Landmass) -->
+              <path d="M0,0 L85,0 Q95,45 80,90 Q65,130 50,200 L0,200 Z" fill="rgba(255, 219, 21, 0.02)" stroke="rgba(255, 219, 21, 0.08)" stroke-width="1" />
+              <!-- Interbay Peninsula / South Tampa (Center Landmass) -->
+              <path d="M125,0 Q135,70 135,105 Q135,120 145,120 Q150,110 152,80 Q155,50 162,0 Z" fill="rgba(255, 219, 21, 0.02)" stroke="rgba(255, 219, 21, 0.08)" stroke-width="1" />
+              <!-- Hillsborough Mainland (Right Landmass) -->
+              <path d="M195,0 Q190,40 210,80 Q230,120 225,200 L300,200 L300,0 Z" fill="rgba(255, 219, 21, 0.02)" stroke="rgba(255, 219, 21, 0.08)" stroke-width="1" />
+            </svg>
+            <!-- Submarine Radar Crosshairs -->
+            <div class="radar-crosshair crosshair-h"></div>
+            <div class="radar-crosshair crosshair-v"></div>
+            <div class="radar-circle circle-1"></div>
+            <div class="radar-circle circle-2"></div>
+            <div class="radar-circle circle-3"></div>
+            <div class="radar-sweep"></div>
+            <!-- Central Radar Pin (Tampa Center) -->
+            <div class="radar-pin">
+              <span class="pin-dot"></span>
+              <span class="pin-pulse"></span>
+            </div>
+            <!-- Active Client Pings -->
+            <div class="client-ping ping-1">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-2">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-3">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-4">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-5">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-6">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-7">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="client-ping ping-8">
+              <span class="client-dot"></span>
+              <span class="client-pulse"></span>
+            </div>
+            <div class="coordinates-overlay">27.9506° N, 82.4572° W</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Premium Contact Form -->
+      <div class="contact-form-wrapper">
+        <div class="glass-card form-card">
+          <!-- Initial State: Form -->
+          <form id="contact-form" class="premium-form">
+            <h3>Send A Message</h3>
+            <p class="form-desc">Fill out the fields below and our growth specialists will get back to you within 24 hours.</p>
+            
+            <div class="form-input-group">
+              <input type="text" id="contact-name" placeholder=" " required />
+              <label for="contact-name">Full Name</label>
+              <span class="input-border"></span>
+            </div>
+
+            <div class="form-input-group">
+              <input type="text" id="contact-business" placeholder=" " required />
+              <label for="contact-business">Business Name</label>
+              <span class="input-border"></span>
+            </div>
+
+            <div class="form-input-group">
+              <input type="email" id="contact-email" placeholder=" " required />
+              <label for="contact-email">Business Email</label>
+              <span class="input-border"></span>
+            </div>
+
+            <div class="form-input-group">
+              <textarea id="contact-message" placeholder=" " required></textarea>
+              <label for="contact-message">How can we help you?</label>
+              <span class="input-border"></span>
+            </div>
+
+            <button type="submit" class="btn-primary submit-btn">
+              <span class="btn-text">Submit Request</span>
+              <span class="btn-spinner hidden"></span>
+            </button>
+          </form>
+
+          <!-- Success State (Hidden initially) -->
+          <div id="contact-success" class="form-success hidden">
+            <div class="success-icon-wrap">
+              <span class="success-check">✓</span>
+              <span class="success-glow"></span>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. A BrandHyve specialist will follow up at the provided email address soon.</p>
+            <button id="success-reset-btn" class="btn-secondary">Send Another Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/main.js';
+</script>
+
+<style>
+  .contact-section {
+    padding-top: 150px;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+  }
+
+  .section-header .caption {
+    color: var(--accent-yellow);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-header h1 {
+    margin-bottom: 20px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+
+  @media (max-width: 810px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .info-card {
+    padding: 30px;
+  }
+
+  .info-card h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    font-size: 20px;
+    background-color: var(--surface-2);
+    border: 1px solid var(--hairline);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--rounded-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-label {
+    display: block;
+    font-size: 12px;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .info-val {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  a.info-val:hover {
+    color: var(--accent-yellow);
+  }
+
+  /* Interactive Map Placeholder */
+  .map-placeholder-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+  }
+
+  .map-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .map-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-yellow);
+    border-radius: var(--rounded-full);
+    box-shadow: 0 0 10px var(--accent-yellow);
+  }
+
+  .map-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+  }
+
+  .map-graphic {
+    flex-grow: 1;
+    background-color: #0b0c10;
+    background-image: url('/tampa-map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(255, 219, 21, 0.25);
+    border-radius: var(--rounded-lg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 219, 21, 0.05);
+  }
+
+  .map-graphic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% black sheet overlay */
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .radar-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--rounded-full);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .circle-1 {
+    width: 100px;
+    height: 100px;
+    border: 1px dashed rgba(255, 219, 21, 0.12);
+  }
+
+  .circle-2 {
+    width: 200px;
+    height: 200px;
+    border: 1px dashed rgba(255, 219, 21, 0.15);
+  }
+
+  .circle-3 {
+    width: 300px;
+    height: 300px;
+    border: 1.5px solid rgba(255, 219, 21, 0.25);
+    box-shadow: inset 0 0 20px rgba(255, 219, 21, 0.05), 0 0 10px rgba(255, 219, 21, 0.1);
+  }
+
+  .radar-crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .crosshair-h {
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 219, 21, 0.25) 20%,
+      rgba(255, 219, 21, 0.25) 80%,
+      transparent
+    );
+    border-bottom: 1px dashed rgba(255, 219, 21, 0.15);
+  }
+
+  .crosshair-v {
+    width: 1px;
+    height: 300px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 219, 21, 0.25) 20%,
+      rgba(255, 219, 21, 0.25) 80%,
+      transparent
+    );
+    border-right: 1px dashed rgba(255, 219, 21, 0.15);
+  }
+
+  .radar-sweep {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 270deg, rgba(255, 219, 21, 0.15) 360deg);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: radarRotation 4s linear infinite;
+    z-index: 3;
+  }
+
+  .radar-sweep::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 219, 21, 0.8), rgba(255, 219, 21, 0.2));
+    transform: translateX(-50%);
+  }
+
+  .radar-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+  }
+
+  .pin-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-yellow);
+    border-radius: var(--rounded-full);
+    box-shadow: 0 0 10px var(--accent-yellow);
+  }
+
+  .pin-pulse {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--accent-yellow);
+    border-radius: var(--rounded-full);
+    opacity: 0;
+    animation: pinPulseAnim 2s infinite ease-out;
+  }
+
+  .coordinates-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-family: monospace;
+    font-size: 10px;
+    color: var(--accent-yellow);
+    opacity: 0.8;
+    background-color: rgba(5, 5, 5, 0.8);
+    padding: 4px 8px;
+    border-radius: var(--rounded-xs);
+    border: 1px solid rgba(255, 219, 21, 0.2);
+    z-index: 6;
+  }
+
+  @keyframes radarRotation {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  @keyframes pinPulseAnim {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  /* Tampa Map & Client Pings Styles */
+  .tampa-map-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .tampa-map-svg path {
+    fill: rgba(255, 219, 21, 0.02);
+    stroke: rgba(255, 219, 21, 0.15);
+    stroke-width: 1.5;
+  }
+
+  .client-ping {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    opacity: 0;
+    animation: pingActivate 4s infinite linear;
+  }
+
+  .client-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-yellow);
+    border-radius: var(--rounded-full);
+    box-shadow: 0 0 8px var(--accent-yellow);
+  }
+
+  .client-pulse {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--accent-yellow);
+    border-radius: var(--rounded-full);
+    opacity: 0;
+    pointer-events: none;
+    animation: pulseActivate 4s infinite linear;
+  }
+
+  .ping-1 { top: 32%; left: 35%; }
+  .ping-1, .ping-1 .client-pulse { animation-delay: -0.84s; }
+
+  .ping-2 { top: 68%; left: 72%; }
+  .ping-2, .ping-2 .client-pulse { animation-delay: -2.96s; }
+
+  .ping-3 { top: 52%; left: 24%; }
+  .ping-3, .ping-3 .client-pulse { animation-delay: -1.46s; }
+
+  .ping-4 { top: 82%; left: 45%; }
+  .ping-4, .ping-4 .client-pulse { animation-delay: -2.29s; }
+
+  .ping-5 { top: 22%; left: 58%; }
+  .ping-5, .ping-5 .client-pulse { animation-delay: -0.23s; }
+
+  .ping-6 { top: 40%; left: 68%; }
+  .ping-6, .ping-6 .client-pulse { animation-delay: -3.72s; }
+
+  .ping-7 { top: 60%; left: 38%; }
+  .ping-7, .ping-7 .client-pulse { animation-delay: -1.84s; }
+
+  .ping-8 { top: 26%; left: 47%; }
+  .ping-8, .ping-8 .client-pulse { animation-delay: -0.48s; }
+
+  @keyframes pingActivate {
+    0% { opacity: 0; }
+    8% { opacity: 0; }
+    10% { opacity: 1; filter: drop-shadow(0 0 6px rgba(255, 219, 21, 0.8)); }
+    12% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes pulseActivate {
+    0% { transform: scale(0.6); opacity: 0; }
+    8% { transform: scale(0.6); opacity: 0; }
+    10% { transform: scale(0.8); opacity: 0.9; }
+    30% { transform: scale(3.2); opacity: 0; }
+    100% { transform: scale(3.2); opacity: 0; }
+  }
+
+  /* Form Card & Floating Labels */
+  .form-card {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .premium-form h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .form-desc {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+  }
+
+  .form-input-group {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .form-input-group input,
+  .form-input-group textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--surface-3);
+    padding: 10px 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.25s ease;
+  }
+
+  .form-input-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .form-input-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 14px;
+    color: var(--ink-muted);
+    pointer-events: none;
+    transition: transform 0.25s ease, font-size 0.25s ease, color 0.25s ease;
+    transform-origin: left top;
+  }
+
+  /* Focus and field active states for floating labels */
+  .form-input-group input:focus ~ label,
+  .form-input-group input:not(:placeholder-shown) ~ label,
+  .form-input-group textarea:focus ~ label,
+  .form-input-group textarea:not(:placeholder-shown) ~ label {
+    transform: translateY(-20px) scale(0.85);
+    color: var(--accent-yellow);
+  }
+
+  .form-input-group input:focus,
+  .form-input-group textarea:focus {
+    border-bottom-color: var(--accent-yellow);
+  }
+
+  .input-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--accent-yellow);
+    transition: width 0.25s ease;
+  }
+
+  .form-input-group input:focus ~ .input-border,
+  .form-input-group textarea:focus ~ .input-border {
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 14px 28px;
+    position: relative;
+  }
+
+  .btn-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(5, 5, 5, 0.2);
+    border-top-color: var(--on-primary);
+    border-radius: var(--rounded-full);
+    animation: spinnerRotate 0.6s linear infinite;
+  }
+
+  .btn-spinner.hidden {
+    display: none;
+  }
+
+  @keyframes spinnerRotate {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Form Success State Screen */
+  .form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    animation: successFadeIn 0.4s ease forwards;
+  }
+
+  .form-success.hidden {
+    display: none;
+  }
+
+  @keyframes successFadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-icon-wrap {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 219, 21, 0.1);
+    border: 1px solid rgba(255, 219, 21, 0.2);
+    border-radius: var(--rounded-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .success-check {
+    font-size: 32px;
+    color: var(--accent-yellow);
+    font-weight: bold;
+  }
+
+  .success-glow {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: var(--rounded-full);
+    box-shadow: 0 0 20px 5px rgba(255, 219, 21, 0.25);
+    animation: successPulse 2s infinite alternate;
+  }
+
+  @keyframes successPulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+  }
+
+  .form-success h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .form-success p {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 320px;
+    margin-bottom: 35px;
+  }
+</style>

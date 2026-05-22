@@ -1,0 +1,949 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Reviews | BrandHyve Google Review Automation & AI Assistant" description="Automate review requests, reply with AI, escalate negative feedback for owner resolution, and generate keyword-rich social proof with BrandHyve." schemaType="software">
+  <!-- Global Decorative Background Glows -->
+  <div class="glow-glow" style="top: 20%; right: 10%;"></div>
+  <div class="glow-glow" style="top: 70%; left: 5%; width: 250px; height: 250px; background: #888888; animation-delay: -2s;"></div>
+
+  <!-- Hero Section -->
+  <section class="section-padding reviews-hero">
+    <div class="section-header">
+      <span class="caption">Review Automation</span>
+      <h1 class="display-xl">Automate Your Reviews. Build Organic Trust.</h1>
+      <p class="body-lg">Generate genuine reviews on autopilot, respond instantly using AI, escalate negative experiences to owners for resolution, and reward every reviewer with social impact donations.</p>
+    </div>
+
+    <!-- Core Features Grid -->
+    <div class="card-grid">
+      <!-- Feature 1: Automated Outreach -->
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">✉️</div>
+          <h3>Automated Outreach</h3>
+          <p>Connect your checkout or CRM software directly to SMS and email dispatch systems. Send feedback requests immediately after a transaction occurs.</p>
+        </div>
+      </div>
+
+      <!-- Feature 2: Personalized Images -->
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">🖼️</div>
+          <h3>Personalized Image Invites</h3>
+          <p>Every client gets a distinct custom invite featuring their name and transaction details baked into a visual template to increase engagement rates.</p>
+        </div>
+      </div>
+
+      <!-- Feature 3: AI Auto-Responses -->
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Reply Autopilot</h3>
+          <p>Engage reviewers automatically. Our AI engine writes and posts unique response replies for every review to keep Google maps ranking signals active.</p>
+        </div>
+      </div>
+
+      <!-- Feature 4: Instant Owner Escalation -->
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">🛡️</div>
+          <h3>Instant Owner Escalation</h3>
+          <p>Alert owners immediately of low ratings. Reply instantly to address experiences or offer make-good solutions directly to customers.</p>
+        </div>
+      </div>
+
+      <!-- Feature 5: Social Repurposing -->
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">📱</div>
+          <h3>Social Content Creator</h3>
+          <p>Repurpose your best 5-star Google reviews into clean social media graphics. Share testimonial assets across profiles with one click.</p>
+        </div>
+      </div>
+
+      <!-- Feature 6: Meal Donation -->
+      <div class="card spotlight-card col-4">
+        <div class="spotlight-card-content">
+          <div class="feature-icon">🍲</div>
+          <h3>Meal Donation Impact</h3>
+          <p>Increase review conversions. BrandHyve donates a meal to families in need for every single review submitted by your customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Feedback Simulator Section -->
+  <section id="routing" class="section-padding routing-section">
+    <div class="routing-split">
+      <div class="routing-left">
+        <span class="caption">AI Feedback Assistant</span>
+        <h2 class="display-lg">Responsive Support Engine</h2>
+        <p class="body-lg">
+          Select a star rating below to see how our system customizes the customer path to maximize positive review impact and resolve issues fast.
+        </p>
+
+        <!-- Star selector -->
+        <div class="star-rating-simulator">
+          <div class="star-prompt">Select rating to simulate:</div>
+          <div class="star-row">
+            <span class="simulator-star" data-rating="1">★</span>
+            <span class="simulator-star" data-rating="2">★</span>
+            <span class="simulator-star" data-rating="3">★</span>
+            <span class="simulator-star" data-rating="4">★</span>
+            <span class="simulator-star" data-rating="5">★</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="routing-right">
+        <div class="glass-card router-visualizer">
+          <!-- Screen 1: Initial -->
+          <div id="route-screen-initial" class="route-screen">
+            <div class="engine-icon pulse">⚙️</div>
+            <h3>AI Assistant Ready</h3>
+            <p>Select a rating on the left to see the AI assistant's response strategy.</p>
+          </div>
+
+          <!-- Screen 2: Positive Routing (4 & 5 stars) - Ask for keyword and write review -->
+          <div id="route-screen-positive" class="route-screen hidden">
+            <div class="engine-icon success">🚀</div>
+            <h3>AI Review Assistant</h3>
+            <p class="route-path-desc">Rating: <span class="rating-badge tag-pos">4-5 Stars</span></p>
+            
+            <!-- Step A: Ask for keywords -->
+            <div id="pos-step-keywords" class="feedback-step">
+              <p class="step-label">What did you like about our service? Select keywords to help write your review:</p>
+              <div class="keyword-pills">
+                <button type="button" class="keyword-pill" data-keyword="efficient">Efficient</button>
+                <button type="button" class="keyword-pill" data-keyword="friendly">Friendly</button>
+                <button type="button" class="keyword-pill" data-keyword="professional">Professional</button>
+                <button type="button" class="keyword-pill" data-keyword="responsive">Responsive</button>
+                <button type="button" class="keyword-pill" data-keyword="knowledgeable">Knowledgeable</button>
+              </div>
+              <div class="simulator-input-group">
+                <input type="text" id="custom-keyword-input" placeholder="Or enter custom keywords (e.g. fast, helpful)..." />
+              </div>
+              <button type="button" id="generate-review-btn" class="btn-primary" style="margin-top: 5px; width: 100%;">Generate AI Review</button>
+            </div>
+
+            <!-- Step B: Display generated review and copy button -->
+            <div id="pos-step-result" class="feedback-step hidden">
+              <div class="route-result-box">
+                <strong>Your Drafted Review:</strong>
+                <p id="generated-review-text" style="color: var(--ink); font-style: italic;"></p>
+              </div>
+              <p style="font-size: 12px; color: var(--ink-muted); margin-bottom: 15px;">Copy this review and post it on Google Business Profile to boost local rankings.</p>
+              <div class="action-buttons-row">
+                <button type="button" id="copy-review-btn" class="btn-primary">Copy Review</button>
+                <button type="button" class="btn-secondary route-reset-btn">Start Over</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 3: Negative Routing (1-3 stars) - Escalate to owner -->
+          <div id="route-screen-negative" class="route-screen hidden">
+            <div class="engine-icon warning">📧</div>
+            <h3>Owner Support Escalation</h3>
+            <p class="route-path-desc">Rating: <span class="rating-badge tag-neg">1-3 Stars</span></p>
+
+            <!-- Step A: Explain escalation and show feedback box -->
+            <div id="neg-step-form" class="feedback-step">
+              <p class="step-label">Your experience is important. Tell us what went wrong so the owner can reach out and resolve it:</p>
+              <div class="simulator-input-group">
+                <textarea id="negative-feedback-text" placeholder="Please describe your experience..."></textarea>
+              </div>
+              <button type="button" id="submit-escalation-btn" class="btn-primary" style="margin-top: 5px; width: 100%;">Send to Owner</button>
+            </div>
+
+            <!-- Step B: Confirmation -->
+            <div id="neg-step-result" class="feedback-step hidden">
+              <div class="route-result-box" style="border-color: rgba(255, 219, 21, 0.2);">
+                <strong>Owner Contact Initiated</strong>
+                <p style="color: var(--ink);">Your feedback has been sent directly to the owner. They will respond shortly to address your bad experience or offer a make-good resolution.</p>
+              </div>
+              <button type="button" class="btn-secondary route-reset-btn" style="margin-top: 10px; width: 100%;">Start Over</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambassador Section -->
+  <section class="section-padding ambassador-section" style="padding-top: 0;">
+    <div class="atmosphere-card-yellow">
+      <div class="atmosphere-content" style="max-width: 100%;">
+        <span class="caption" style="color: var(--ink-dark);">Ambassador Engine</span>
+        <h2>Convert Reviewers to Referral Advocates</h2>
+        <p style="color: var(--ink-dark); margin-bottom: 25px;">
+          Do not stop at 5-star ratings. Our ambassador engine automatically invites happy reviewers to join your loyalty or affiliate program. Convert satisfied clients into active promoters who drive consistent word of mouth growth.
+        </p>
+        <a href="/contact" class="btn-primary" style="background-color: var(--ink-dark); color: var(--accent-yellow);">Activate Advocates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll-Triggered Stats Counters -->
+  <section class="section-padding stats-section" style="padding-top: 0;">
+    <div class="atmosphere-card-grey border-beam-card">
+      <div class="border-beam-content" style="width: 100%;">
+        <h2 class="display-md" style="text-align: center; margin-bottom: 50px; color: var(--ink);">Why Google Reviews Matter</h2>
+        <div class="stats-counters-grid">
+          <div class="counter-item">
+            <span class="stat-counter display-xl" data-limit="92" data-suffix="%">0%</span>
+            <span class="counter-label">Of consumers read online reviews before choosing local businesses.</span>
+          </div>
+          <div class="counter-item">
+            <span class="stat-counter display-xl" data-limit="72" data-suffix="%">0%</span>
+            <span class="counter-label">Of customers won't take action until reading a positive review.</span>
+          </div>
+          <div class="counter-item">
+            <span class="stat-counter display-xl" data-limit="54" data-suffix="%">0%</span>
+            <span class="counter-label">Increase in business revenue for listings with 40+ positive reviews.</span>
+          </div>
+          <div class="counter-item">
+            <span class="stat-counter display-xl" data-limit="84" data-suffix="%">0%</span>
+            <span class="counter-label">Trust online feedback as much as personal recommendations.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards Section -->
+  <section id="pricing" class="section-padding pricing-section" style="padding-top: 0;">
+    <div class="section-header">
+      <span class="caption">Pricing Plans</span>
+      <h2 class="display-lg">Simple, Transparent Pricing</h2>
+      <p class="body-lg">Unlock review growth with packages structured for every growth stage. No hidden setup costs.</p>
+
+      <!-- Toggle Switcher -->
+      <div class="toggle-container">
+        <span class="toggle-label active">Monthly</span>
+        <label class="switch">
+          <input type="checkbox" id="billing-toggle" />
+          <span class="slider round"></span>
+        </label>
+        <span class="toggle-label">Yearly <span class="discount-badge">Save 20%</span></span>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Starter Card -->
+      <div class="pricing-card">
+        <span class="plan-badge">Starter</span>
+        <div class="pricing-header">
+          <span class="currency">$</span>
+          <span class="pricing-val" data-monthly="49" data-yearly="39">49</span>
+          <span class="pricing-period">/mo</span>
+        </div>
+        <p class="plan-desc">For small operations wanting review automation basics.</p>
+        <ul class="plan-features">
+          <li>50 Invites per month</li>
+          <li>SMS and Email Delivery</li>
+          <li>AI SEO Review Assistant</li>
+          <li>Google Profile Integration</li>
+        </ul>
+        <button class="btn-secondary plan-btn">Start Free Trial</button>
+      </div>
+
+      <!-- Growth Card (Featured with yellow highlights) -->
+      <div class="pricing-card featured-pricing border-beam-card">
+        <div class="border-beam-content" style="height: 100%; display: flex; flex-direction: column; padding: 34px 29px;">
+          <div class="popular-tag">MOST POPULAR</div>
+          <span class="plan-badge" style="color: var(--on-primary); margin-top: 20px;">Growth</span>
+          <div class="pricing-header">
+            <span class="currency" style="color: var(--on-primary);">$</span>
+            <span class="pricing-val" data-monthly="99" data-yearly="79" style="color: var(--on-primary);">99</span>
+            <span class="pricing-period" style="color: var(--on-primary);">/mo</span>
+          </div>
+          <p class="plan-desc" style="color: rgba(5, 5, 5, 0.75);">Perfect for scaling businesses seeking quick growth.</p>
+          <ul class="plan-features dark-features">
+            <li>250 Invites per month</li>
+            <li>SMS and Email Delivery</li>
+            <li>AI SEO Review Assistant</li>
+            <li>Automated Response Agent</li>
+            <li>API Integration</li>
+            <li>Interactive Dashboard</li>
+          </ul>
+          <button class="btn-primary plan-btn" style="background-color: var(--on-primary); color: var(--accent-yellow);">Start Free Trial</button>
+        </div>
+      </div>
+
+      <!-- Pro Card -->
+      <div class="pricing-card">
+        <span class="plan-badge">Pro</span>
+        <div class="pricing-header">
+          <span class="currency">$</span>
+          <span class="pricing-val" data-monthly="199" data-yearly="159">199</span>
+          <span class="pricing-period">/mo</span>
+        </div>
+        <p class="plan-desc">For multi-location stores needing high-volume reviews.</p>
+        <ul class="plan-features">
+          <li>Unlimited Invites</li>
+          <li>Custom SMS Sender Name</li>
+          <li>Advanced AI Response Agent</li>
+          <li>Multi-location Support</li>
+          <li>Dedicated Account Manager</li>
+        </ul>
+        <button class="btn-secondary plan-btn">Start Free Trial</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky CTA Banner -->
+  <section class="section-padding cta-banner-section">
+    <div class="atmosphere-card-grey cta-banner border-beam-card">
+      <div class="border-beam-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 40px; flex-wrap: wrap;">
+        <div class="cta-left">
+          <h2 class="display-md">Start Automating Reviews Today</h2>
+          <p class="body-lg" style="margin-top: 10px;">
+            Set up review invites, configure your AI responder, and safeguard your ratings profile with BrandHyve.
+          </p>
+        </div>
+        <div class="cta-right">
+          <a href="/contact" class="btn-primary" style="padding: 16px 36px;">Talk to our team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/main.js';
+</script>
+
+<style>
+  /* Local Component Styling */
+  .reviews-hero {
+    padding-top: 150px;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+  }
+
+  .section-header .caption {
+    color: var(--accent-yellow);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .card-grid .col-4 {
+    grid-column: span 4;
+  }
+
+  @media (max-width: 810px) {
+    .card-grid .col-4 {
+      grid-column: span 12;
+    }
+  }
+
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Routing Simulator Section styles */
+  .routing-split {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 810px) {
+    .routing-split {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .routing-left .caption {
+    color: var(--accent-yellow);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .routing-left h2 {
+    margin-bottom: 25px;
+  }
+
+  .routing-left p {
+    margin-bottom: 40px;
+  }
+
+  .star-rating-simulator {
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-lg);
+    padding: 25px;
+  }
+
+  .star-prompt {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 15px;
+  }
+
+  .star-row {
+    display: flex;
+    gap: 15px;
+  }
+
+  .simulator-star {
+    font-size: 40px;
+    color: var(--surface-3);
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  .simulator-star:hover, .simulator-star.active {
+    color: var(--accent-yellow);
+    transform: scale(1.15);
+  }
+
+  .simulator-star:active {
+    transform: scale(0.95);
+  }
+
+  .router-visualizer {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .route-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .route-screen.hidden {
+    display: none;
+  }
+
+  .engine-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--rounded-full);
+    background-color: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hairline);
+  }
+
+  .engine-icon.pulse {
+    animation: enginePulse 2s infinite ease-in-out;
+  }
+
+  .engine-icon.success {
+    background-color: rgba(255, 219, 21, 0.1);
+    border-color: rgba(255, 219, 21, 0.2);
+    color: var(--accent-yellow);
+  }
+
+  .engine-icon.warning {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--hairline);
+    color: var(--ink-muted);
+  }
+
+  @keyframes enginePulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.05); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.02); }
+  }
+
+  .route-screen h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .route-screen p {
+    color: var(--ink-muted);
+    font-size: 14px;
+    max-width: 320px;
+    line-height: 1.5;
+  }
+
+  .route-path-desc {
+    margin-bottom: 25px !important;
+  }
+
+  .rating-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: var(--rounded-sm);
+    margin-left: 5px;
+  }
+
+  .tag-pos {
+    background-color: rgba(255, 219, 21, 0.1);
+    color: var(--accent-yellow);
+    border: 1px solid rgba(255, 219, 21, 0.2);
+  }
+
+  .tag-neg {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--ink-muted);
+    border: 1px solid var(--hairline);
+  }
+
+  .route-flow-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: var(--surface-2);
+    padding: 8px 16px;
+    border-radius: var(--rounded-pill);
+    border: 1px solid var(--hairline);
+    margin-bottom: 25px;
+  }
+
+  .route-flow-line .arrow {
+    color: var(--ink-muted);
+  }
+
+  .route-flow-line .node {
+    color: var(--ink-muted);
+  }
+
+  .route-flow-line .highlight-yellow {
+    color: var(--accent-yellow);
+  }
+
+  .route-flow-line .highlight-grey {
+    color: var(--ink);
+  }
+
+  .route-result-box {
+    background-color: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-lg);
+    padding: 15px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: left;
+    max-width: 400px;
+  }
+
+  .route-result-box strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  /* Stats indicators details */
+  .stats-counters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: 810px) {
+    .stats-counters-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-counters-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter-item .display-xl {
+    color: var(--accent-yellow);
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .counter-label {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-width: 200px;
+  }
+
+  /* CTA Banner Details */
+  .cta-banner {
+    padding: 1px !important;
+  }
+
+  .cta-left {
+    max-width: 60%;
+  }
+
+  @media (max-width: 810px) {
+    .cta-left {
+      max-width: 100%;
+    }
+    .cta-right {
+      width: 100%;
+    }
+    .cta-right .btn-primary {
+      width: 100%;
+    }
+  }
+
+  /* Pricing Toggle styles */
+  .toggle-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px auto 0;
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    padding: 6px 16px;
+    border-radius: var(--rounded-pill);
+  }
+
+  .toggle-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .toggle-label.active {
+    color: var(--ink);
+  }
+
+  .discount-badge {
+    background-color: var(--accent-yellow);
+    color: var(--on-primary);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--rounded-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--surface-3);
+    transition: .3s;
+    border: 1px solid var(--hairline);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--ink);
+    transition: .3s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--accent-yellow);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+    background-color: var(--on-primary);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* Pricing Grid */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+    align-items: stretch;
+  }
+
+  @media (max-width: 810px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  .pricing-card {
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-xl);
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .pricing-card.featured-pricing {
+    background-color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+    box-shadow: 0 30px 60px -15px rgba(255, 219, 21, 0.2);
+    transform: scale(1.03);
+    z-index: 5;
+    padding: 1px; /* border-beam outline padding */
+  }
+
+  .pricing-card.featured-pricing::after {
+    background-color: var(--accent-yellow);
+  }
+
+  @media (max-width: 810px) {
+    .pricing-card.featured-pricing {
+      transform: none;
+    }
+  }
+
+  .popular-tag {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--canvas);
+    color: var(--accent-yellow);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: var(--rounded-sm);
+    border: 1px solid var(--hairline-soft);
+  }
+
+  .dark-features li {
+    color: var(--on-primary) !important;
+  }
+
+  .dark-features li:before {
+    color: var(--on-primary) !important;
+  }
+
+  .plan-badge {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .pricing-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 15px;
+  }
+
+  .pricing-header .currency {
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 2px;
+  }
+
+  .pricing-header .pricing-val {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    line-height: 1;
+  }
+
+  .pricing-header .pricing-period {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-left: 6px;
+  }
+
+  .plan-desc {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-grow: 1;
+  }
+
+  .plan-features li {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .plan-features li:before {
+    content: "✓";
+    color: var(--accent-yellow);
+    font-weight: 700;
+  }
+
+  .plan-btn {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  /* Simulator Interactive Styles */
+  .feedback-step {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feedback-step.hidden {
+    display: none;
+  }
+
+  .step-label {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .keyword-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .keyword-pill {
+    background-color: var(--surface-2);
+    border: 1px solid var(--hairline);
+    color: var(--ink-muted);
+    padding: 6px 14px;
+    border-radius: var(--rounded-pill);
+    font-size: 12px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .keyword-pill:hover {
+    border-color: var(--accent-yellow);
+    color: var(--ink);
+  }
+
+  .keyword-pill.selected {
+    background-color: rgba(255, 219, 21, 0.15);
+    border-color: var(--accent-yellow);
+    color: var(--accent-yellow);
+  }
+
+  .simulator-input-group {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .simulator-input-group input,
+  .simulator-input-group textarea {
+    width: 100%;
+    background-color: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-md);
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .simulator-input-group input:focus,
+  .simulator-input-group textarea:focus {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 2px rgba(255, 219, 21, 0.15);
+  }
+
+  .simulator-input-group textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  .action-buttons-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .action-buttons-row button {
+    flex: 1;
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+</style>
