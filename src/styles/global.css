@@ -317,6 +317,15 @@ a:hover {
   padding: 0 min(5vw, 60px);
 }
 
+.logo img {
+  filter: drop-shadow(0 0 13.25px rgba(255, 219, 21, 0.85));
+  transition: filter 0.3s ease;
+}
+
+.logo img:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 219, 21, 1.0));
+}
+
 /* Footer Section */
 .footer-section {
   border-top: 1px solid var(--hairline-soft);

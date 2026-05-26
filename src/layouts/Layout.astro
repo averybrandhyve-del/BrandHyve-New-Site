@@ -42,8 +42,7 @@ const {
 		<meta property="twitter:image" content="https://www.brandhyve.com/og-image.jpg" />
 
 		<!-- Favicons -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1" />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Astro View Transitions -->
@@ -164,8 +163,8 @@ const {
 		<!-- Sticky Nav Bar -->
 		<nav class="nav-container">
 			<div class="logo">
-				<a href="/">
-					<span class="logo-icon">⚡</span> Brand<span style="color: var(--accent-yellow); font-weight: 700;">Hyve</span>
+				<a href="/" style="display: flex; align-items: center;">
+					<img src="/logo.svg?v=1" alt="BrandHyve Logo" style="height: 57px; width: auto;" />
 				</a>
 			</div>
 			<div class="nav-links">
@@ -189,7 +188,9 @@ const {
 			<div class="footer-grid">
 				<div class="footer-brand">
 					<div class="logo" style="margin-bottom: 20px;">
-						<span style="font-size: 20px;">⚡</span> Brand<span style="color: var(--accent-yellow); font-weight: 700;">Hyve</span>
+						<a href="/" style="display: flex; align-items: center;">
+							<img src="/logo.svg?v=1" alt="BrandHyve Logo" style="height: 57px; width: auto;" />
+						</a>
 					</div>
 					<p class="body-sm" style="color: var(--ink-muted); max-width: 250px;">
 						Empowering local businesses with automated reputation and reviews intelligence.
