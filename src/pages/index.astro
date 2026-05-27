@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="BrandHyve | Automated Google Reviews & Local SEO Autopilot" description="Grow your online reputation with automated Google reviews, compliant customer feedback flows, and AI responses. Push your Local Map Pack ranking to the top." schemaType="software">
+<Layout title="BrandHyve | Automated Google Reviews & Local SEO Autopilot" description="Grow your online reputation with automated Google reviews, compliant customer feedback flows, and AI responses. Push your Local Map Pack ranking to the top." ogImage="/og-home.jpg">
   <!-- Global Decorative Background Glows -->
   <div class="glow-glow" style="top: 15%; left: 10%;"></div>
   <div class="glow-glow" style="top: 55%; right: 5%; width: 250px; height: 250px; background: #888888; animation-delay: -3s;"></div>
@@ -937,6 +937,30 @@ import Layout from '../layouts/Layout.astro';
       width: 100%;
     }
     .cta-right .btn-primary {
+      width: 100%;
+    }
+    .dashboard-stats {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .dashboard-content-split {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .dashboard-body {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 20px;
+      gap: 12px;
+    }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
       width: 100%;
     }
   }

@@ -464,6 +464,7 @@ function initContactForm() {
 
     const name = document.getElementById('contact-name').value;
     const businessName = document.getElementById('contact-business').value;
+    const email = document.getElementById('contact-email').value;
     const phone = document.getElementById('contact-phone').value;
     const message = document.getElementById('contact-message').value;
 
@@ -475,6 +476,7 @@ function initContactForm() {
       body: JSON.stringify({
         name,
         businessName,
+        email,
         phone,
         message
       })
@@ -526,6 +528,15 @@ function initIntegrationsScroll() {
   });
 
   function updatePositions() {
+    if (isMobile) {
+      bubbles.forEach(bubble => {
+        bubble.style.transform = '';
+        bubble.style.filter = '';
+        bubble.style.opacity = '';
+      });
+      return;
+    }
+
     const rect = section.getBoundingClientRect();
 
     // Skip calculations if section is completely out of view
@@ -585,6 +596,7 @@ function initIntegrationsScroll() {
 
   // Passive listener for high-performance scroll handling
   window.addEventListener('scroll', () => {
+    if (isMobile) return;
     window.requestAnimationFrame(updatePositions);
   }, { passive: true });
 

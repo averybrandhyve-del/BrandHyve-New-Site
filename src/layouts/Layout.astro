@@ -5,14 +5,19 @@ import { ClientRouter } from 'astro:transitions';
 interface Props {
 	title?: string;
 	description?: string;
-	schemaType?: 'software' | 'local' | 'faq' | 'contact';
+	schemaType?: 'local' | 'faq' | 'contact';
+	ogImage?: string;
 }
 
 const { 
 	title = "BrandHyve | Automated Google Reviews & Reputation Management", 
 	description = "Effortlessly collect 5-star Google reviews, manage customer feedback, and rank higher in local search with BrandHyve's automated review system.",
-	schemaType = 'software'
+	schemaType = 'local',
+	ogImage = '/og-home.jpg'
 } = Astro.props;
+
+const gaTrackingId = import.meta.env.PUBLIC_GA_TRACKING_ID || 'G-TRACKINGID';
+const fbPixelId = import.meta.env.PUBLIC_FB_PIXEL_ID || 'PIXEL-ID-PLACEHOLDER';
 ---
 
 <!doctype html>
@@ -21,11 +26,14 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
+		<!-- Preconnect Links -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
+		<link rel="preconnect" href="https://connect.facebook.net" />
+
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={new URL(Astro.url.pathname, 'https://www.brandhyve.com').href} />
-		<meta name="keywords" content="reputation management, google reviews, automated reviews, local seo, brandhyve, review generation assistant, positive feedback, google business profile" />
 		<meta name="author" content="BrandHyve" />
 		
 		<!-- Open Graph / Facebook -->
@@ -34,13 +42,13 @@ const {
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={new URL(Astro.url.pathname, 'https://www.brandhyve.com').href} />
 		<meta property="og:site_name" content="BrandHyve" />
-		<meta property="og:image" content="https://www.brandhyve.com/og-image.jpg" />
+		<meta property="og:image" content={new URL(ogImage, 'https://www.brandhyve.com').href} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content="https://www.brandhyve.com/og-image.jpg" />
+		<meta property="twitter:image" content={new URL(ogImage, 'https://www.brandhyve.com').href} />
 
 		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1" />
@@ -50,16 +58,16 @@ const {
 		<ClientRouter />
 		
 		<!-- Google Analytics (GA4) Tracking -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRACKINGID" is:inline></script>
-		<script is:inline>
+		<script async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`} is:inline></script>
+		<script is:inline define:vars={{ gaTrackingId }}>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-			gtag('config', 'G-TRACKINGID');
+			gtag('config', gaTrackingId);
 		</script>
 
 		<!-- Facebook Pixel Code -->
-		<script is:inline>
+		<script is:inline define:vars={{ fbPixelId }}>
 			!function(f,b,e,v,n,t,s)
 			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -68,11 +76,11 @@ const {
 			t.src=v;s=b.getElementsByTagName(e)[0];
 			s.parentNode.insertBefore(t,s)}(window, document,'script',
 			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', 'PIXEL-ID-PLACEHOLDER');
+			fbq('init', fbPixelId);
 			fbq('track', 'PageView');
 		</script>
 		<noscript>
-			<img height="1" width="1" style="display:none" alt="fb-pixel" src="https://www.facebook.com/tr?id=PIXEL-ID-PLACEHOLDER&ev=PageView&noscript=1" />
+			<img height="1" width="1" style="display:none" alt="fb-pixel" src={`https://www.facebook.com/tr?id=${fbPixelId}&ev=PageView&noscript=1`} />
 		</noscript>
 
 		<!-- JSON-LD Structured Data Schema -->
@@ -98,7 +106,7 @@ const {
 		<script type="application/ld+json" is:inline>
 			{
 				"@context": "https://schema.org",
-				"@type": "LocalBusiness",
+				"@type": "ProfessionalService",
 				"name": "BrandHyve",
 				"image": "https://www.brandhyve.com/logo.png",
 				"url": "https://www.brandhyve.com/",
@@ -106,34 +114,16 @@ const {
 				"priceRange": "$$",
 				"address": {
 					"@type": "PostalAddress",
-					"addressLocality": "Greater Tampa Bay Area",
+					"addressLocality": "Tampa",
 					"addressRegion": "FL",
 					"addressCountry": "US"
+				},
+				"areaServed": {
+					"@type": "AdministrativeArea",
+					"name": "Greater Tampa Bay Area"
 				}
 			}
 		</script>
-
-		{schemaType === 'software' && (
-			<script type="application/ld+json" is:inline>
-				{
-					"@context": "https://schema.org",
-					"@type": "SoftwareApplication",
-					"name": "BrandHyve",
-					"operatingSystem": "All",
-					"applicationCategory": "BusinessApplication",
-					"offers": {
-						"@type": "Offer",
-						"priceCurrency": "USD",
-						"price": "49.00"
-					},
-					"aggregateRating": {
-						"@type": "AggregateRating",
-						"ratingValue": "4.9",
-						"reviewCount": "184"
-					}
-				}
-			</script>
-		)}
 
 		{schemaType === 'faq' && (
 			<script type="application/ld+json" is:inline>
@@ -183,6 +173,7 @@ const {
 		)}
 	</head>
 	<body>
+		<a class="skip-link" href="#main-content">Skip to main content</a>
 		<!-- Decorative Background Honeycombs -->
 		<div class="honeycomb-background">
 			<svg class="honeycomb-shape shape-1" viewBox="0 0 200 200" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -232,7 +223,9 @@ const {
 		</nav>
 
 		<!-- Main Page Content Slot -->
-		<slot />
+		<main id="main-content">
+			<slot />
+		</main>
 
 		<!-- Footer Section -->
 		<footer class="footer-section">

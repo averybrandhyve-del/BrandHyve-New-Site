@@ -917,5 +917,26 @@ p, span, li, a, h1, h2, h3, h4 {
   }
 }
 
+/* Accessibility Skip Link styling */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: var(--accent-yellow);
+  color: var(--on-primary);
+  padding: 10px 20px;
+  border-radius: 0 0 var(--rounded-md) var(--rounded-md);
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 10000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 
 
