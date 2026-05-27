@@ -446,20 +446,44 @@ function initContactForm() {
     btnText.classList.add('hidden');
     btnSpinner.classList.remove('hidden');
 
-    // Simulate server dispatch delay
-    setTimeout(() => {
+    const name = document.getElementById('contact-name').value;
+    const businessName = document.getElementById('contact-business').value;
+    const phone = document.getElementById('contact-phone').value;
+    const message = document.getElementById('contact-message').value;
+
+    fetch('https://services.leadconnectorhq.com/hooks/nytILJ6ClXaTpkvQEqRL/webhook-trigger/8e2db2ff-b5d6-48c5-8c51-0f0df2d04fc4', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        businessName,
+        phone,
+        message
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       // Toggle screens
       form.classList.add('hidden');
       successScreen.classList.remove('hidden');
 
       // Reset form fields
       form.reset();
-
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error);
+      alert('There was an error sending your message. Please try again or call us at 813-308-0543.');
+    })
+    .finally(() => {
       // Reset loading state for next time
       submitBtn.disabled = false;
       btnText.classList.remove('hidden');
       btnSpinner.classList.add('hidden');
-    }, 1800);
+    });
   });
 
   if (resetBtn) {
