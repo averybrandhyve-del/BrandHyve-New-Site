@@ -43,6 +43,30 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Detailed Content Section for SEO -->
+  <section class="section-padding content-section-seo" style="border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background-color: var(--surface-1);">
+    <div class="seo-content-grid">
+      <div class="seo-text-col">
+        <h2 class="display-md" style="margin-bottom: 20px; color: var(--ink);">Why Reviews Drive Local Search Rankings</h2>
+        <p class="body-md" style="color: var(--ink-muted); margin-bottom: 15px; line-height: 1.6;">
+          Search engine algorithms prioritize trust, recency, and active user engagement. By consistently collecting fresh, positive customer feedback, your business signals to search bots that it is active and relevant in your local service area. BrandHyve automates this pipeline, sending personalized requests that remove friction and significantly boost review conversion rates.
+        </p>
+        <p class="body-md" style="color: var(--ink-muted); line-height: 1.6;">
+          Additionally, customer reviews contain natural keywords related to your services, products, and geographic location. When search engines index these reviews, they build a semantic map of your business entity, raising your profile visibility in map packs and organic search query results.
+        </p>
+      </div>
+      <div class="seo-text-col">
+        <h3 class="display-sm" style="margin-bottom: 20px; color: var(--ink); font-size: 22px;">Automated Outreach vs. Manual Follow-ups</h3>
+        <p class="body-md" style="color: var(--ink-muted); margin-bottom: 15px; line-height: 1.6;">
+          Manual review requests are easily forgotten during day-to-day operations. Our automated systems integrate directly with your customer relationship management (CRM) and point-of-sale (POS) systems. This triggers timed review request campaigns via email or SMS text message immediately following customer purchases.
+        </p>
+        <p class="body-md" style="color: var(--ink-muted); line-height: 1.6;">
+          This timely approach results in higher response rates, constructive user feedback, and a steady stream of authentic Google Business Profile reviews that solidify your digital reputation.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Section (Accordion) -->
   <section id="faq" class="section-padding faq-section">
     <div class="section-header">
@@ -269,5 +293,25 @@ import Layout from '../layouts/Layout.astro';
     .cta-right .btn-primary {
       width: 100%;
     }
+  }
+
+  /* SEO content grid styling */
+  .seo-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .seo-content-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  .seo-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 </style>

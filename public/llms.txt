@@ -1,0 +1,11 @@
+# BrandHyve
+
+BrandHyve automates reputation management and maps ranking optimization for local businesses.
+
+## Main Routes
+- [Home](https://www.brandhyve.com/): Product overview, features, and sandbox dashboard.
+- [Reviews](https://www.brandhyve.com/reviews): Automated review invites, AI response automation, and pricing tiers.
+- [SEO](https://www.brandhyve.com/seo): Local Map Pack ranking acceleration and profile optimization.
+- [Websites](https://www.brandhyve.com/websites): Fast, custom-coded web architectures optimized for Core Web Vitals.
+- [About Us](https://www.brandhyve.com/about): Core values, mission Statement, and FAQ answers.
+- [Contact](https://www.brandhyve.com/contact): Lead forms, callback requests, and headquarters information.

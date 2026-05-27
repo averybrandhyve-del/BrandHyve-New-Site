@@ -11,6 +11,7 @@ function initAll() {
   initFaqAccordions();
   initContactForm();
   initIntegrationsScroll();
+  initEmailObfuscation();
 }
 
 if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -589,5 +590,20 @@ function initIntegrationsScroll() {
 
   // Run initial state calculation
   updatePositions();
+}
+
+// 10. Email Obfuscation Decoder
+function initEmailObfuscation() {
+  document.querySelectorAll('.obfuscated-email').forEach(el => {
+    const user = el.getAttribute('data-user');
+    const domain = el.getAttribute('data-domain');
+    if (user && domain) {
+      const email = `${user}@${domain}`;
+      el.href = `mailto:${email}`;
+      if (el.textContent.includes('[at]')) {
+        el.textContent = email;
+      }
+    }
+  });
 }
 

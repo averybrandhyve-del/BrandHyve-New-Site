@@ -10,7 +10,7 @@ interface Props {
 
 const { 
 	title = "BrandHyve | Automated Google Reviews & Reputation Management", 
-	description = "Effortlessly collect more 5-star Google reviews, manage customer feedback, and rank higher in local search results with BrandHyve's automated review system.",
+	description = "Effortlessly collect 5-star Google reviews, manage customer feedback, and rank higher in local search with BrandHyve's automated review system.",
 	schemaType = 'software'
 } = Astro.props;
 ---
@@ -24,6 +24,7 @@ const {
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, 'https://www.brandhyve.com').href} />
 		<meta name="keywords" content="reputation management, google reviews, automated reviews, local seo, brandhyve, review generation assistant, positive feedback, google business profile" />
 		<meta name="author" content="BrandHyve" />
 		
@@ -31,7 +32,7 @@ const {
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:url" content="https://www.brandhyve.com/" />
+		<meta property="og:url" content={new URL(Astro.url.pathname, 'https://www.brandhyve.com').href} />
 		<meta property="og:site_name" content="BrandHyve" />
 		<meta property="og:image" content="https://www.brandhyve.com/og-image.jpg" />
 
@@ -48,7 +49,70 @@ const {
 		<!-- Astro View Transitions -->
 		<ClientRouter />
 		
+		<!-- Google Analytics (GA4) Tracking -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRACKINGID" is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-TRACKINGID');
+		</script>
+
+		<!-- Facebook Pixel Code -->
+		<script is:inline>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', 'PIXEL-ID-PLACEHOLDER');
+			fbq('track', 'PageView');
+		</script>
+		<noscript>
+			<img height="1" width="1" style="display:none" alt="fb-pixel" src="https://www.facebook.com/tr?id=PIXEL-ID-PLACEHOLDER&ev=PageView&noscript=1" />
+		</noscript>
+
 		<!-- JSON-LD Structured Data Schema -->
+		<!-- Identity Schema (Organization) -->
+		<script type="application/ld+json" is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "BrandHyve",
+				"url": "https://www.brandhyve.com/",
+				"logo": "https://www.brandhyve.com/logo.png",
+				"sameAs": [
+					"https://www.facebook.com/profile.php?id=61577943821635",
+					"https://www.instagram.com/brand_hyve/",
+					"https://x.com/brandhyve",
+					"https://www.youtube.com/@brandhyve",
+					"https://www.linkedin.com/company/brandhyve"
+				]
+			}
+		</script>
+
+		<!-- Local Business Schema -->
+		<script type="application/ld+json" is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "BrandHyve",
+				"image": "https://www.brandhyve.com/logo.png",
+				"url": "https://www.brandhyve.com/",
+				"telephone": "+1-813-308-0543",
+				"priceRange": "$$",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Greater Tampa Bay Area",
+					"addressRegion": "FL",
+					"addressCountry": "US"
+				}
+			}
+		</script>
+
 		{schemaType === 'software' && (
 			<script type="application/ld+json" is:inline>
 				{
@@ -66,26 +130,6 @@ const {
 						"@type": "AggregateRating",
 						"ratingValue": "4.9",
 						"reviewCount": "184"
-					}
-				}
-			</script>
-		)}
-
-		{(schemaType === 'local' || schemaType === 'faq' || schemaType === 'contact') && (
-			<script type="application/ld+json" is:inline>
-				{
-					"@context": "https://schema.org",
-					"@type": "LocalBusiness",
-					"name": "BrandHyve",
-					"image": "https://www.brandhyve.com/logo.png",
-					"url": "https://www.brandhyve.com/",
-					"telephone": "+1-813-308-0543",
-					"priceRange": "$$",
-					"address": {
-						"@type": "PostalAddress",
-						"addressLocality": "Greater Tampa Bay Area",
-						"addressRegion": "FL",
-						"addressCountry": "US"
 					}
 				}
 			</script>
@@ -161,8 +205,8 @@ const {
 		<!-- Sticky Nav Bar -->
 		<nav class="nav-container">
 			<div class="logo">
-				<a href="/" style="display: flex; align-items: center;">
-					<img src="/logo.svg?v=1" alt="BrandHyve Logo" style="height: 57px; width: auto;" />
+				<a href="/" class="logo-link">
+					<img src="/logo.svg?v=1" alt="BrandHyve Logo" width="162" height="57" class="logo-img" />
 				</a>
 			</div>
 			
@@ -180,10 +224,10 @@ const {
 				<a href="/websites">Websites</a>
 				<a href="/about">About Us</a>
 				<a href="/contact">Contact</a>
-				<a href="/reviews#pricing" class="btn-primary mobile-only-btn" style="padding: 10px 24px; font-size: 14px;">Join the Hyve</a>
+				<a href="/reviews#pricing" class="btn-primary mobile-only-btn nav-mobile-btn">Join the Hyve</a>
 			</div>
 			<div class="nav-actions">
-				<a href="/reviews#pricing" class="btn-primary" style="padding: 8px 18px; font-size: 13px;">Join the Hyve</a>
+				<a href="/reviews#pricing" class="btn-primary nav-desktop-btn">Join the Hyve</a>
 			</div>
 		</nav>
 
@@ -194,20 +238,34 @@ const {
 		<footer class="footer-section">
 			<div class="footer-grid">
 				<div class="footer-brand">
-					<div class="logo" style="margin-bottom: 20px;">
-						<a href="/" style="display: flex; align-items: center;">
-							<img src="/logo.svg?v=1" alt="BrandHyve Logo" style="height: 57px; width: auto;" />
+					<div class="logo footer-logo-wrap">
+						<a href="/" class="logo-link">
+							<img src="/logo.svg?v=1" alt="BrandHyve Logo" width="162" height="57" class="logo-img" />
 						</a>
 					</div>
-					<p class="body-sm" style="color: var(--ink-muted); max-width: 250px;">
+					<p class="body-sm footer-brand-p">
 						Empowering local businesses with automated reputation and reviews intelligence.
 					</p>
-					<div class="footer-socials" style="display: flex; gap: 15px; margin-top: 20px;">
+					<div class="footer-contact-info">
+						<span>📍 Greater Tampa Bay Area</span>
+						<span>📞 <a href="tel:+18133080543" class="footer-contact-link">813-308-0543</a></span>
+						<span>✉️ <a href="mailto:Info@brandhyve.com" class="obfuscated-email footer-contact-link" data-user="Info" data-domain="brandhyve.com">Info [at] brandhyve.com</a></span>
+					</div>
+					<div class="footer-socials">
 						<a href="https://www.facebook.com/profile.php?id=61577943821635" target="_blank" aria-label="Facebook">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
 						</a>
 						<a href="https://www.instagram.com/brand_hyve/" target="_blank" aria-label="Instagram">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+						</a>
+						<a href="https://x.com/brandhyve" target="_blank" aria-label="X (Twitter)">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+						</a>
+						<a href="https://www.youtube.com/@brandhyve" target="_blank" aria-label="YouTube">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></polygon></svg>
+						</a>
+						<a href="https://www.linkedin.com/company/brandhyve" target="_blank" aria-label="LinkedIn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
 						</a>
 					</div>
 				</div>
@@ -226,12 +284,12 @@ const {
 				</div>
 				<div class="footer-links-col">
 					<h4>Associations</h4>
-					<div style="display: flex; gap: 20px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
-						<a href="https://valricofishhawk.chambermaster.com" target="_blank" style="display: block;">
-							<img src="/chamber-of-commerce-seal.png?v=1" alt="Valrico Fishhawk Chamber of Commerce Seal" style="max-width: 110px; height: auto; background-color: #ffffff; border-radius: 50%; padding: 8px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); transform: translateY(-4px);" />
+					<div class="footer-assoc-list">
+						<a href="https://valricofishhawk.chambermaster.com" target="_blank" class="footer-seal-link">
+							<img src="/chamber-of-commerce-seal.png?v=1" alt="Valrico Fishhawk Chamber of Commerce Seal" width="110" height="110" class="footer-seal chamber-seal" />
 						</a>
-						<a href="https://www.christiansinbusiness.com" target="_blank" style="display: block;">
-							<img src="/christians-in-business-seal.png?v=2" alt="Christians in Business Member Seal" style="max-width: 110px; height: auto; background-color: #ffffff; border-radius: 50%; padding: 8px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));" />
+						<a href="https://www.christiansinbusiness.com" target="_blank" class="footer-seal-link">
+							<img src="/christians-in-business-seal.png?v=2" alt="Christians in Business Member Seal" width="110" height="110" class="footer-seal cib-seal" />
 						</a>
 					</div>
 				</div>
@@ -242,3 +300,79 @@ const {
 		</footer>
 	</body>
 </html>
+
+<style>
+	.logo-link {
+		display: flex;
+		align-items: center;
+	}
+	.logo-img {
+		height: 57px;
+		width: auto;
+		display: block;
+	}
+	.nav-mobile-btn {
+		padding: 10px 24px;
+		font-size: 14px;
+	}
+	.nav-desktop-btn {
+		padding: 8px 18px;
+		font-size: 13px;
+	}
+	.footer-logo-wrap {
+		margin-bottom: 20px;
+	}
+	.footer-brand-p {
+		color: var(--ink-muted);
+		max-width: 250px;
+	}
+	.footer-contact-info {
+		margin-top: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		font-size: 13px;
+		color: var(--ink-muted);
+	}
+	.footer-contact-link {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+	.footer-contact-link:hover {
+		color: var(--accent-yellow);
+	}
+	.footer-socials {
+		display: flex;
+		gap: 15px;
+		margin-top: 20px;
+	}
+	.footer-assoc-list {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		margin-top: 15px;
+		flex-wrap: wrap;
+	}
+	.footer-seal-link {
+		display: block;
+	}
+	.footer-seal {
+		max-width: 110px;
+		height: auto;
+		background-color: #ffffff;
+		border-radius: 50%;
+		padding: 8px;
+		filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+		transition: transform 0.2s ease;
+	}
+	.chamber-seal {
+		transform: translateY(-4px);
+	}
+	.chamber-seal:hover {
+		transform: translateY(-8px);
+	}
+	.cib-seal:hover {
+		transform: translateY(-4px);
+	}
+</style>

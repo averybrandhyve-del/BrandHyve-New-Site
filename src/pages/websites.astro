@@ -34,6 +34,30 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Detailed Content Section for SEO -->
+  <section class="section-padding content-section-seo" style="border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background-color: var(--surface-1);">
+    <div class="seo-content-grid">
+      <div class="seo-text-col">
+        <h2 class="display-md" style="margin-bottom: 20px; color: var(--ink);">Speed is a Critical Ranking Factor</h2>
+        <p class="body-md" style="color: var(--ink-muted); margin-bottom: 15px; line-height: 1.6;">
+          Google's Core Web Vitals measure real-world user experience metrics, including loading performance, interactivity, and visual stability (CLS). Bloated drag-and-drop builders generate heavy DOM trees, redundant Javascript libraries, and excessive CSS rules that delay rendering.
+        </p>
+        <p class="body-md" style="color: var(--ink-muted); line-height: 1.6;">
+          We build custom-coded Astro architectures that compile directly to static HTML and CSS. By stripping out unnecessary Javascript and delivering optimized assets, we ensure your site passes Core Web Vitals on mobile and desktop, improving your organic search ranking.
+        </p>
+      </div>
+      <div class="seo-text-col">
+        <h3 class="display-sm" style="margin-bottom: 20px; color: var(--ink); font-size: 22px;">Built for Conversion & Lead Capture</h3>
+        <p class="body-md" style="color: var(--ink-muted); margin-bottom: 15px; line-height: 1.6;">
+          A fast site gets visitors through the door, but a conversion-optimized layout keeps them there. Our designs incorporate clear call-to-actions, lightning-fast form components, and dynamic client review triggers that sync directly with GoHighLevel and other CRM integrations.
+        </p>
+        <p class="body-md" style="color: var(--ink-muted); line-height: 1.6;">
+          This ensures that traffic driven by your SEO and map pack visibility converts efficiently into booked calls, form submissions, and revenue for your business.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Portfolio Showcase Section -->
   <section class="section-padding portfolio-section" style="padding-top: 0;">
     <div class="section-header">
@@ -304,5 +328,25 @@ import Layout from '../layouts/Layout.astro';
     color: var(--ink);
     padding: 4px 10px;
     border-radius: var(--rounded-sm);
+  }
+
+  /* SEO content grid styling */
+  .seo-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .seo-content-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  .seo-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 </style>
