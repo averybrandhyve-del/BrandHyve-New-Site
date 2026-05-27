@@ -71,21 +71,10 @@ import Layout from '../layouts/Layout.astro';
                   <input type="text" id="mock-cust-name" placeholder="John Doe" required />
                 </div>
                 <div class="form-group">
-                  <label for="mock-cust-contact">Email or Phone Number</label>
-                  <input type="text" id="mock-cust-contact" placeholder="john@example.com" required />
+                  <label for="mock-cust-phone">Customer Phone Number</label>
+                  <input type="tel" id="mock-cust-phone" placeholder="813-308-0543" required />
                 </div>
-                <div class="form-group-row">
-                  <div class="form-group-half">
-                    <label for="mock-channel">Channel</label>
-                    <select id="mock-channel">
-                      <option value="sms">SMS Text</option>
-                      <option value="email">Email</option>
-                    </select>
-                  </div>
-                  <div class="form-group-half btn-group">
-                    <button type="submit" class="btn-primary mock-submit-btn">Send Invite</button>
-                  </div>
-                </div>
+                <button type="submit" class="btn-primary mock-submit-btn" style="margin-top: 10px; height: 42px;">Send Invite</button>
               </form>
             </div>
 

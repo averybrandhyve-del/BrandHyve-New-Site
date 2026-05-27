@@ -55,28 +55,43 @@ function initLiveDashboard() {
     e.preventDefault();
 
     const nameInput = document.getElementById('mock-cust-name');
-    const contactInput = document.getElementById('mock-cust-contact');
-    const channelSelect = document.getElementById('mock-channel');
+    const phoneInput = document.getElementById('mock-cust-phone');
 
     const name = nameInput.value.trim() || 'John Doe';
-    const contact = contactInput.value.trim() || 'john@example.com';
-    const channel = channelSelect.value;
+    const phone = phoneInput.value.trim() || '';
+    const channel = 'sms';
 
-    if (!name || !contact) return;
+    if (!name || !phone) return;
 
     // Clear inputs
     nameInput.value = '';
-    contactInput.value = '';
+    phoneInput.value = '';
+
+    // Send payload to GHL webhook
+    fetch('https://services.leadconnectorhq.com/hooks/nytILJ6ClXaTpkvQEqRL/webhook-trigger/d1113981-3baf-4168-bb75-0d7e8d0b5b37', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        channel
+      })
+    })
+    .catch(error => {
+      console.error('Error sending webhook:', error);
+    });
 
     // Show sending toast
-    showToast(`Sending ${channel === 'sms' ? 'Text message' : 'Email'} request to ${name}...`);
+    showToast(`Sending Text message request to ${name}...`);
 
     // Add row to mock table
     const row = document.createElement('div');
     row.className = 'dashboard-row pending-row';
     row.innerHTML = `
       <span class="cust-name">${name}</span>
-      <span class="cust-contact">${contact}</span>
+      <span class="cust-contact">${phone}</span>
       <span class="cust-channel channel-${channel}">${channel.toUpperCase()}</span>
       <span class="cust-status status-sent">Sending...</span>
     `;
